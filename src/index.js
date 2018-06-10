@@ -1,10 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import registerServiceWorker from './registerServiceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Router } from 'react-router'
+import createBrowserHistory from 'history/createBrowserHistory'
+import Routes from './routes'
+import registerServiceWorker from './registerServiceWorker'
+
+const history = createBrowserHistory()
 
 ReactDOM.render(
-  <div>
-    <h1>Hello World</h1>
-  </div>
+  <Router 
+    history={history}>
+    <Routes />
+  </Router>
   , document.getElementById('root'));
 registerServiceWorker();
